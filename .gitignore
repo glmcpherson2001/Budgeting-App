@@ -1,0 +1,13 @@
+# NPM 
+node_modules/
+
+
+# Config
+.env
+*config.json
+
+
+# VSCode 
+.vscode/
+
+

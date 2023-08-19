@@ -1,0 +1,22 @@
+{
+  "name": "budgeting-app",
+  "version": "1.0.0",
+  "description": "Simple Budgeting App",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glmcpherson2001/Budgeting-App.git"
+  },
+  "author": "Grant McPherson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glmcpherson2001/Budgeting-App/issues"
+  },
+  "homepage": "https://github.com/glmcpherson2001/Budgeting-App#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
