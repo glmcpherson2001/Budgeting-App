@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the app source code
 COPY . .
 
+# Run migrations using Sequelize CLI
+RUN npx sequelize-cli db:migrate
+
 # Expose the port the app runs on
 EXPOSE 3000
 

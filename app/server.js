@@ -1,5 +1,12 @@
 const express = require('express')
-const app = express()
+
+module.exports = (router) => {
+    const app = express()
 
 
-module.exports
+    app.use(express.json())
+    app.use('/', router)
+
+    return app
+
+}
