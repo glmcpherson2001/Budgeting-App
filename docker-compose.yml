@@ -1,0 +1,21 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: yourdbname
+      POSTGRES_USER: yourdbuser
+      POSTGRES_PASSWORD: yourdbpassword
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  nodejs-app:
+    build:
+      context: ./  # Path to your Node.js app's Dockerfile and source code
+    ports:
+      - "3000:3000"   # Map host port to container port
+    depends_on:
+      - postgres      # Make sure PostgreSQL is up before starting the Node.js app
+
+volumes:
+  postgres_data:     # Volume for PostgreSQL data persistence

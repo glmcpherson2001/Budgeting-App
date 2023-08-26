@@ -17,6 +17,10 @@
   },
   "homepage": "https://github.com/glmcpherson2001/Budgeting-App#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.1"
   }
 }
