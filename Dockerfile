@@ -1,6 +1,10 @@
 # Use Node.js 18.15.0 as the base image
 FROM node:18.15.0
 
+ENV APP_PORT = 3000
+
+
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -12,12 +16,6 @@ RUN npm install
 
 # Copy the rest of the app source code
 COPY . .
-
-# Run migrations using Sequelize CLI
-RUN npx sequelize-cli db:migrate
-
-# Expose the port the app runs on
-EXPOSE 3000
 
 # Command to run the Node.js app
 CMD [ "node", "index.js" ]

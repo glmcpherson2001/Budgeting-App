@@ -1,7 +1,7 @@
 // .sequelizerc
 
 const path = require('path');
-
+console.log(path.resolve('app', 'conf', 'db.config.js'),)
 module.exports = {
   'config': path.resolve('config', 'db.config.js'),
 };

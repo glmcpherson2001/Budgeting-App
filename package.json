@@ -4,7 +4,10 @@
   "description": "Simple Budgeting App",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "dev": "nodemon .",
+    "migrate": "cd app/Sequelize && npx sequelize-cli db:migrate",
+    "docker-dev": "docker-compose -f dev.docker-compose.yml up -d"
   },
   "repository": {
     "type": "git",
@@ -25,6 +28,11 @@
     "supertest": "^6.3.3"
   },
   "devDependencies": {
+    "nodemon": "^3.0.1",
     "sqlite": "^5.0.1"
+  },
+  "nodemonConfig": {
+    "ignore": ["readme.md"],
+    "delay": 2500
   }
 }

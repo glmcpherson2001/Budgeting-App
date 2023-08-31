@@ -9,15 +9,13 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  nodejs-app:
+  node-api:
     build:
       context: ./  # Path to your Node.js app's Dockerfile and source code
     ports:
       - "3000:3000"   # Map host port to container port
     depends_on:
       - postgres      # Make sure PostgreSQL is up before starting the Node.js app
-    volumes:
-      - /
 
 volumes:
   postgres_data:     # Volume for PostgreSQL data persistence
