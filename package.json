@@ -21,6 +21,8 @@
   "homepage": "https://github.com/glmcpherson2001/Budgeting-App#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "graphql": "^16.8.0",
+    "graphql-http": "^1.22.0",
     "jest": "^29.6.4",
     "pg": "^8.11.3",
     "sequelize": "^6.32.1",
@@ -32,7 +34,9 @@
     "sqlite": "^5.0.1"
   },
   "nodemonConfig": {
-    "ignore": ["readme.md"],
+    "ignore": [
+      "readme.md"
+    ],
     "delay": 2500
   }
 }
