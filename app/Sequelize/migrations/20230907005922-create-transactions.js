@@ -1,16 +1,13 @@
 'use strict';
-
-const { DataTypes } = require('sequelize');
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('Transactions',{
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable('Transactions', {
       transId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: DataTypes.INTEGER
+        type: Sequelize.INTEGER
       },
       userId: {
         allowNull: false,
@@ -23,36 +20,34 @@ module.exports = {
       },
       transactionName: {
         allowNull: false,
-        type: DataTypes.STRING,
-
+        type: Sequelize.STRING,
       },
       transactionAmount: {
         allowNull: false, 
-        type: DataTypes.DECIMAL(10, 2)
+        type: Sequelize.DECIMAL(10, 2)
       },
       transactionCategory:{
         allowNull: false,
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       transactionSubCategory: {
-        type: DataTypes.STRING
+        type: Sequelize.STRING
       },
       transactionDate: {
-        type: DataTypes.DATE,
+        type: Sequelize.DATE,
         allowNull: false
       },
       createdAt: {
         allowNull: false,
-        type: DataTypes.DATE
+        type: Sequelize.DATE
       },
-      updatedAt:{
-        allowNull: false, 
-        type: DataTypes.DATE
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
-    })
+    });
   },
-
-  async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('Transactions')
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable('Transactions');
   }
 };
