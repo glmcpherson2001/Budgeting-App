@@ -1,4 +1,4 @@
-const { GraphQLObjectType, GraphQLSchema, GraphQLString, GraphQLNonNull, GraphQLInt, GraphQLFloat } = require('graphql');
+const { GraphQLObjectType, GraphQLSchema, GraphQLString, GraphQLNonNull, GraphQLInt, GraphQLFloat, GraphQLList } = require('graphql');
 
 const UserType = new GraphQLObjectType({
     name: 'User',
@@ -22,6 +22,35 @@ const TransactionType = new GraphQLObjectType({
         createdAt: {type: GraphQLNonNull(GraphQLString)},
         updatedAt: {type: GraphQLNonNull(GraphQLString)}
     })
+})
+
+const RootQuery = new GraphQLObjectType({
+    name: 'RootQuery',
+    fields: {
+        User: {
+            type: UserType,
+            args: { id: { type: GraphQLInt }},
+            resolve: (parent, args) => {
+                // TODO
+            }
+
+        },
+        Transaction: {
+            type: TransactionType,
+            args: { id: { type: GraphQLInt }},
+            resolve: (parent, args) => {
+                // TODO
+            }
+        },
+        Users: {
+            type: GraphQLList(UserType),
+            resolve: () => {}
+        },
+        Transactions: {
+            type: GraphQLList(TransactionType),
+            resolve: () => {}
+        }
+    }
 })
 
 

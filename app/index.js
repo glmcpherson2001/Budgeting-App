@@ -1,9 +1,8 @@
 
-const appPath = './app'
+const appPath = './'
 
 const utility = require(`${appPath}/utility`)
-const controller = require(`${appPath}/controller`)(utility)
-const router = require(`${appPath}/routes`)(controller)
+const router = require(`${appPath}/routes`)()
 const app = require(`${appPath}/server`)(router)
 
 try {
