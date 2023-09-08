@@ -1,5 +1,6 @@
 const express = require('express')
-const { createHandler } = require('graphql-http/lib/use/express')
+const { ApolloServer } = require('@apollo/server')
+const { expressMiddleware } = require('@apollo/server/express4')
 
 module.exports = (schema) => {
     const app = express()
